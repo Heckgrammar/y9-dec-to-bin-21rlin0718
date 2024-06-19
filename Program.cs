@@ -15,6 +15,13 @@ namespace Y9_DEC_TO_BIN_SKELETON
             string myString = "12"; //watch me being cast from string to int
             int myStringAsInt = Convert.ToInt32(myString); //watch me cast from string to int
 
+            //STARTER 2: INSERT A STRING AT THE START OF ANOTHER STRING
+            Console.WriteLine("Enter string");
+            myString = Console.ReadLine();
+            Console.WriteLine("Enter another string");
+            string myString2 = Console.ReadLine();
+
+
             //MAIN:  NUMBER CONVERSION PROGRAM
 
             //CODE GOES HERE
