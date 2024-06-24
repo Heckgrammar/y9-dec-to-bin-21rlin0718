@@ -17,14 +17,18 @@ namespace Y9_DEC_TO_BIN_SKELETON
 
             //STARTER 2: INSERT A STRING AT THE START OF ANOTHER STRING
             Console.WriteLine("Enter string");
-            myString = Console.ReadLine();
+            string myString1 = Console.ReadLine();
             Console.WriteLine("Enter another string");
             string myString2 = Console.ReadLine();
+            Console.WriteLine(myString1 + myString2);
+
 
 
             //MAIN:  NUMBER CONVERSION PROGRAM
 
-            //CODE GOES HERE
+            Console.WriteLine("Enter number");
+            int denary = Convert.ToInt32(Console.ReadLine());
+
         }
 
         ////static void means the function will not return a value so it does not need a data type 
