@@ -27,7 +27,6 @@ namespace Y9_DEC_TO_BIN_SKELETON
 
             //MAIN:  NUMBER CONVERSION PROGRAM
 
-            int[] binary = { };
             Console.WriteLine("Enter number");
             int denary = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine(numberConversion(denary, 2));
@@ -39,8 +38,8 @@ namespace Y9_DEC_TO_BIN_SKELETON
         static string numberConversion(int number, int numberbase)
         {
             int divisions = 0;
+
             int calc = 0;
-            string result = " ";
             int[] binary = { };
             while (number/numberbase != 0)
             {
@@ -63,7 +62,7 @@ namespace Y9_DEC_TO_BIN_SKELETON
             }
 
 
-            return result; //REMOVE THE RED LINE!
+             return result //REMOVE THE RED LINE!
         }
     }
 }
