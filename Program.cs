@@ -15,7 +15,7 @@ namespace Y9_DEC_TO_BIN_SKELETON
             int myInt = 0; //just for testing single stepping
             string myString = "12"; //watch me being cast from string to int
             int myStringAsInt = Convert.ToInt32(myString); //watch me cast from string to int
-
+             
             ////STARTER 2: INSERT A STRING AT THE START OF ANOTHER STRING
             //Console.WriteLine("Enter string");
             //string myString1 = Console.ReadLine();
