@@ -40,6 +40,7 @@ namespace Y9_DEC_TO_BIN_SKELETON
         {
             string result = " ";
             int remainder = 0;
+            int[] binary = new int[numberbase];
             while (number / numberbase > 0)
             {
                 remainder = number % numberbase;
@@ -49,9 +50,8 @@ namespace Y9_DEC_TO_BIN_SKELETON
                 {
                     Console.WriteLine(number % numberbase);
                 }
-
             }
-           
+
             return result;
 
             //string result = " ";
