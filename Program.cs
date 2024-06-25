@@ -40,16 +40,23 @@ namespace Y9_DEC_TO_BIN_SKELETON
         {
             string result = " ";
             int remainder = 0;
-            int[] binary = new int[numberbase];
+            int i = 0;
+            string[] binary = {};
             while (number / numberbase > 0)
             {
                 remainder = number % numberbase;
-                Console.Write(remainder);
+                binary[i] = Convert.ToString(remainder);
+                i = i + 1;
                 number = number / numberbase;
                 if (number == 1)
                 {
                     Console.WriteLine(number % numberbase);
                 }
+            }
+
+            for (int j = binary.Length; j < 0;j++)
+            {
+                Console.WriteLine(binary[i]);
             }
 
             return result;
