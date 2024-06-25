@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -37,32 +38,35 @@ namespace Y9_DEC_TO_BIN_SKELETON
         //...this function DOES return a value so the method must have a data type
         static string numberConversion(int number, int numberbase)
         {
-            int divisions = 0;
-
-            int calc = 0;
-            int[] binary = { };
-            while (number/numberbase != 0)
+            string result = " ";
+            int remainder = 0;
+            while (number / numberbase > 0)
             {
-                calc = number / numberbase;
-                divisions = divisions + 1;
-            }
-
-            while (number / numberbase != 0)
-            {
-                calc = number / numberbase;
-                for (int i = 0; i < divisions; i++)
+                remainder = number % numberbase;
+                Console.Write(remainder);
+                number = number / numberbase;
+                if (number == 1)
                 {
-                    binary[i] = calc;
+                    Console.WriteLine(number % numberbase);
                 }
+
             }
+           
+            return result;
 
-            for (int i = binary.Length; i>=0; i--)
-            {
-                Console.WriteLine(binary[i]);
-            }
+            //string result = " ";
+            //int remainder = 0;
+            //while (number / numberbase > 0)
+            //{
+            //    remainder = number % numberbase;
+            //    Console.Write(remainder);
+            //    number = number / numberbase;
+            //    if (number == 1)
+            //    {
+            //        Console.WriteLine(number % numberbase);
+            //    }
 
-
-             return result //REMOVE THE RED LINE!
+            //}
         }
     }
 }
