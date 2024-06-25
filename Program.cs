@@ -54,7 +54,7 @@ namespace Y9_DEC_TO_BIN_SKELETON
                 }
             }
 
-            for (int j = binary.Length; j < 0;j++)
+            for (int j = binary.Length; j < 0; j++)
             {
                 Console.WriteLine(binary[i]);
             }
