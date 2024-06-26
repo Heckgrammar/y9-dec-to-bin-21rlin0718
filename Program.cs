@@ -29,7 +29,7 @@ namespace Y9_DEC_TO_BIN_SKELETON
 
             //MAIN:  NUMBER CONVERSION PROGRAM
 
-            Console.WriteLine("Enter number");
+            Console.WriteLine("Enter whole number");
             int denary = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine(numberConversion(denary, 2));
 
@@ -43,6 +43,12 @@ namespace Y9_DEC_TO_BIN_SKELETON
             int remainder = 0;
             int count = 0;
             int[] binary = new int[32];
+
+            while (number < 0)
+            {
+                Console.WriteLine("Enter whole number");
+                number = Convert.ToInt32(Console.ReadLine());
+            }
 
             Console.WriteLine("Denary:" + number);
             while (number > 0)
