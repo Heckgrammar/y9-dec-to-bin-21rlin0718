@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 
 namespace Y9_DEC_TO_BIN_SKELETON
+
 {
     internal class Program
     {
@@ -42,6 +43,8 @@ namespace Y9_DEC_TO_BIN_SKELETON
             int remainder = 0;
             int count = 0;
             int[] binary = new int[32];
+
+            Console.WriteLine("Denary:" + number);
             while (number > 0)
             {
                 remainder = number % numberbase;
@@ -50,7 +53,8 @@ namespace Y9_DEC_TO_BIN_SKELETON
                 count = count + 1;
             }
 
-            for (int j = count-1; j >= 0;j--)
+            Console.Write("Binary:");
+            for (int j = count - 1; j >= 0; j--)
             {
                 Console.Write(binary[j]);
             }
