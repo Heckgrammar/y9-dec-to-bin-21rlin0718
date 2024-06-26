@@ -60,9 +60,9 @@ namespace Y9_DEC_TO_BIN_SKELETON
             }
 
             Console.Write("Binary:");
-            for (int j = count - 1; j >= 0; j--)
+            for (int i = count - 1; i >= 0; i--)
             {
-                Console.Write(binary[j]);
+                Console.Write(binary[i]);
             }
 
             return result;
