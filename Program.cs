@@ -26,7 +26,6 @@ namespace Y9_DEC_TO_BIN_SKELETON
             //Console.WriteLine(myString1 + myString2);
 
 
-
             //MAIN:  NUMBER CONVERSION PROGRAM
 
             Console.WriteLine("Enter whole number");
@@ -46,7 +45,7 @@ namespace Y9_DEC_TO_BIN_SKELETON
 
             while (number < 0)
             {
-                Console.WriteLine("Enter whole number");
+                Console.WriteLine("Enter a positive whole number");
                 number = Convert.ToInt32(Console.ReadLine());
             }
 
