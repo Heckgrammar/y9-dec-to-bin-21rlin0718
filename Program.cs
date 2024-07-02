@@ -25,7 +25,6 @@ namespace Y9_DEC_TO_BIN_SKELETON
             //string myString2 = Console.ReadLine();
             //Console.WriteLine(myString1 + myString2);
 
-
             //MAIN:  NUMBER CONVERSION PROGRAM
 
             Console.WriteLine("Enter whole number");
