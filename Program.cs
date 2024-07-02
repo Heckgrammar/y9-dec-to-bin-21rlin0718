@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 
 namespace Y9_DEC_TO_BIN_SKELETON
+
 {
     internal class Program
     {
@@ -25,10 +26,9 @@ namespace Y9_DEC_TO_BIN_SKELETON
             //Console.WriteLine(myString1 + myString2);
 
 
-
             //MAIN:  NUMBER CONVERSION PROGRAM
 
-            Console.WriteLine("Enter number");
+            Console.WriteLine("Enter whole number");
             int denary = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine(numberConversion(denary, 2));
 
