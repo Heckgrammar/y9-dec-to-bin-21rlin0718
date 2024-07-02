@@ -47,8 +47,8 @@ namespace Y9_DEC_TO_BIN_SKELETON
                 Console.WriteLine("Enter a positive whole number");
                 number = Convert.ToInt32(Console.ReadLine());
             }
-
             Console.WriteLine("Denary:" + number);
+
             while (number > 0)
             {
                 remainder = number % numberbase;
