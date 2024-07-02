@@ -40,40 +40,32 @@ namespace Y9_DEC_TO_BIN_SKELETON
         {
             string result = " ";
             int remainder = 0;
-            int i = 0;
-            string[] binary = {};
-            while (number / numberbase > 0)
+            int count = 0;
+            int[] binary = new int[32];
+
+            while (number < 0)
             {
-                remainder = number % numberbase;
-                binary[i] = Convert.ToString(remainder);
-                i = i + 1;
-                number = number / numberbase;
-                if (number == 1)
-                {
-                    Console.WriteLine(number % numberbase);
-                }
+                Console.WriteLine("Enter a positive whole number");
+                number = Convert.ToInt32(Console.ReadLine());
             }
 
-            for (int j = binary.Length; j < 0; j++)
+            Console.WriteLine("Denary:" + number);
+            while (number > 0)
             {
-                Console.WriteLine(binary[i]);
+                remainder = number % numberbase;
+                number = number / numberbase;
+                binary[count] = remainder;
+                count = count + 1;
+            }
+
+            Console.Write("Binary:");
+            for (int i = count - 1; i >= 0; i--)
+            {
+                Console.Write(binary[i]);
             }
 
             return result;
 
-            //string result = " ";
-            //int remainder = 0;
-            //while (number / numberbase > 0)
-            //{
-            //    remainder = number % numberbase;
-            //    Console.Write(remainder);
-            //    number = number / numberbase;
-            //    if (number == 1)
-            //    {
-            //        Console.WriteLine(number % numberbase);
-            //    }
-
-            //}
         }
     }
 }
