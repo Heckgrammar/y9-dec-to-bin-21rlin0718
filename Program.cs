@@ -17,7 +17,7 @@ namespace Y9_DEC_TO_BIN_SKELETON
             int myInt = 0; //just for testing single stepping
             string myString = "12"; //watch me being cast from string to int
             int myStringAsInt = Convert.ToInt32(myString); //watch me cast from string to int
-             
+
             ////STARTER 2: INSERT A STRING AT THE START OF ANOTHER STRING
             //Console.WriteLine("Enter string");
             //string myString1 = Console.ReadLine();
@@ -27,9 +27,20 @@ namespace Y9_DEC_TO_BIN_SKELETON
 
             //MAIN:  NUMBER CONVERSION PROGRAM
 
-            Console.WriteLine("Enter whole number");
-            int denary = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(numberConversion(denary, 2));
+            Console.WriteLine("Press 1 for Integer to Binary, 2 for Integer to Hexadecimal");
+            int option = Convert.ToInt32(Console.ReadLine());
+            if (option == 1)
+            {
+                Console.WriteLine("Enter number between 1-255");
+                int denary = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(numberConversion(denary, 2));
+            }
+            else
+            {
+                Console.WriteLine("Enter number between 1-255");
+                int denary = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(numberToHexConversion(denary, 16));
+            }
 
         }
 
@@ -40,11 +51,11 @@ namespace Y9_DEC_TO_BIN_SKELETON
             string result = " ";
             int remainder = 0;
             int count = 0;
-            int[] binary = new int[32];
+            int[] binary = new int[8];
 
-            while (number < 0)
+            while (number < 0 || number > 255)
             {
-                Console.WriteLine("Enter a positive whole number");
+                Console.WriteLine("Enter a number between 1-255");
                 number = Convert.ToInt32(Console.ReadLine());
             }
             Console.WriteLine("Denary:" + number);
@@ -66,5 +77,66 @@ namespace Y9_DEC_TO_BIN_SKELETON
             return result;
 
         }
+
+        static string numberToHexConversion(int number, int numberbase)
+        {
+            string result = " ";
+            int remainder = 0;
+            int count = 0;
+            string[] hex = new string[2];
+
+            while (number < 0 || number > 255)
+            {
+                Console.WriteLine("Enter a number between 1-255");
+                number = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("Denary:" + number);
+
+            while (number > 0)
+            {
+                remainder = number % numberbase;
+                number = number / numberbase;
+                hex[count] = Convert.ToString(remainder);
+                if (remainder > 9)
+                {
+                    if (remainder == 10)
+                    {
+                        hex[count] = "A";
+                    }
+                    else if (remainder == 11) 
+                    {
+                        hex[count] = "B";
+                    }
+                    else if (remainder == 12)
+                    {
+                        hex[count] = "C";
+                    }
+                    else if (remainder == 13)
+                    {
+                        hex[count] = "D";
+                    }
+                    else if (remainder == 14)
+                    {
+                        hex[count] = "E";
+                    }
+                    else if (remainder == 15)
+                    {
+                        hex[count] = "F";
+                    }
+                } 
+                count = count + 1;
+                
+            }
+
+            Console.Write("Hex:");
+            for (int i = count - 1; i >= 0; i--)
+            {
+                Console.Write(hex[i]);
+            }
+
+            return result;
+
+        }
+
     }
 }
