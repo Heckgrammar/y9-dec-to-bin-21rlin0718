@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -27,13 +29,19 @@ namespace Y9_DEC_TO_BIN_SKELETON
 
             //MAIN:  NUMBER CONVERSION PROGRAM
 
-            Console.WriteLine("Press 1 for Integer to Binary, 2 for Integer to Hexadecimal");
+            Console.WriteLine("Press 1 for Denary to Binary, 2 for Binary to Denary, 3 for Denary to Hexadecimal");
             int option = Convert.ToInt32(Console.ReadLine());
             if (option == 1)
             {
                 Console.WriteLine("Enter number between 1-255");
                 int denary = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine(numberConversion(denary, 2));
+            }
+            else if (option == 2)
+            {
+                Console.WriteLine("Enter 8-bit binary number");
+                string binary = Console.ReadLine();
+                Console.WriteLine(binToNumberConversion(binary));
             }
             else
             {
@@ -55,7 +63,7 @@ namespace Y9_DEC_TO_BIN_SKELETON
 
             while (number < 0 || number > 255)
             {
-                Console.WriteLine("Enter a number between 1-255");
+                Console.WriteLine("Enter number between 1-255");
                 number = Convert.ToInt32(Console.ReadLine());
             }
             Console.WriteLine("Denary:" + number);
@@ -78,6 +86,58 @@ namespace Y9_DEC_TO_BIN_SKELETON
 
         }
 
+        static string binToNumberConversion(string number)
+        {
+            string result = " ";
+            int denary = 0;
+            string numString = Convert.ToString(number);
+            int length = Convert.ToInt32(numString.Length);
+
+            //while (numString.Length != 8)
+            //{
+            //    Console.WriteLine("Enter 8-bit binary number");
+            //    number = Convert.ToInt32(Console.ReadLine());
+            //}
+            //Console.WriteLine("Binary:" + number);
+
+            if (numString[0] == 1)
+            {
+                denary = denary + 128;
+            }
+            else if (numString[1] == 1)
+            {
+                denary = denary + 64;
+            }
+            else if (numString[2] == 1)
+            {
+                denary = denary + 32;
+            }
+            else if (numString[3] == 1)
+            {
+                denary = denary + 16;
+            }
+            else if (numString[4] == 1)
+            {
+                denary = denary + 8;
+            }
+            else if (numString[5] == 1)
+            {
+                denary = denary + 4;
+            }
+            else if (numString[6] == 1)
+            {
+                denary = denary + 2;
+            }
+            else if (numString[7] == 1)
+            {
+                denary = denary + 1;
+            }
+
+            Console.WriteLine("Denary:" + denary);
+
+            return result;
+        }
+
         static string numberToHexConversion(int number, int numberbase)
         {
             string result = " ";
@@ -85,14 +145,14 @@ namespace Y9_DEC_TO_BIN_SKELETON
             int count = 0;
             string[] hex = new string[2];
 
-            while (number < 0 || number > 255)
+            while (number < 0 )
             {
-                Console.WriteLine("Enter a number between 1-255");
+                Console.WriteLine("Enter number between 1-255");
                 number = Convert.ToInt32(Console.ReadLine());
             }
             Console.WriteLine("Denary:" + number);
 
-            while (number > 0)
+            while (number > 0 || number > 255)
             {
                 remainder = number % numberbase;
                 number = number / numberbase;
