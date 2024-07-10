@@ -91,9 +91,15 @@ namespace Y9_DEC_TO_BIN_SKELETON
             string result = " ";
             int denary = 0;
 
+            if (Convert.ToInt32(number) > 11111111)
+            {
+                Console.WriteLine("Enter 8-bit binary number");
+                number = Console.ReadLine();
+            }
+
             denary = Convert.ToInt32(number, 2);
             Console.WriteLine("Binary:" + number);
-            Console.WriteLine("Denary:" + denary);
+            Console.Write("Denary:" + denary);
 
             return result;
         }
