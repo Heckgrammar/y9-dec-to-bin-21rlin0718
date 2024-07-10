@@ -98,13 +98,13 @@ namespace Y9_DEC_TO_BIN_SKELETON
             string result = " ";
             int denary = 0;
 
-            while (Convert.ToInt32(number) > 11111111)
+            while (Convert.ToInt32(number) > 11111111)         
             {
                 Console.WriteLine("Enter 8-bit binary number");
                 number = Console.ReadLine();
             }
 
-            denary = Convert.ToInt32(number, 2);
+            denary = Convert.ToInt32(number, 2);   //converts 'number' to its integer form in base 2
             Console.WriteLine("Binary:" + number);
             Console.Write("Denary:" + denary);
 
