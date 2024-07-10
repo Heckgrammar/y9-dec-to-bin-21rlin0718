@@ -31,6 +31,13 @@ namespace Y9_DEC_TO_BIN_SKELETON
 
             Console.WriteLine("Press 1 for Denary to Binary, 2 for Binary to Denary, 3 for Denary to Hexadecimal");
             int option = Convert.ToInt32(Console.ReadLine());
+
+            while (option > 3)
+            {
+                Console.WriteLine("Press 1 for Denary to Binary, 2 for Binary to Denary, 3 for Denary to Hexadecimal");
+                option = Convert.ToInt32(Console.ReadLine());
+            } 
+
             if (option == 1)
             {
                 Console.WriteLine("Enter number between 1-255");
@@ -91,7 +98,7 @@ namespace Y9_DEC_TO_BIN_SKELETON
             string result = " ";
             int denary = 0;
 
-            if (Convert.ToInt32(number) > 11111111)
+            while (Convert.ToInt32(number) > 11111111)
             {
                 Console.WriteLine("Enter 8-bit binary number");
                 number = Console.ReadLine();
