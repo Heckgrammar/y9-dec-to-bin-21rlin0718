@@ -90,49 +90,9 @@ namespace Y9_DEC_TO_BIN_SKELETON
         {
             string result = " ";
             int denary = 0;
-            string numString = Convert.ToString(number);
-            int length = Convert.ToInt32(numString.Length);
 
-            //while (numString.Length != 8)
-            //{
-            //    Console.WriteLine("Enter 8-bit binary number");
-            //    number = Convert.ToInt32(Console.ReadLine());
-            //}
-            //Console.WriteLine("Binary:" + number);
-
-            if (numString[0] == 1)
-            {
-                denary = denary + 128;
-            }
-            else if (numString[1] == 1)
-            {
-                denary = denary + 64;
-            }
-            else if (numString[2] == 1)
-            {
-                denary = denary + 32;
-            }
-            else if (numString[3] == 1)
-            {
-                denary = denary + 16;
-            }
-            else if (numString[4] == 1)
-            {
-                denary = denary + 8;
-            }
-            else if (numString[5] == 1)
-            {
-                denary = denary + 4;
-            }
-            else if (numString[6] == 1)
-            {
-                denary = denary + 2;
-            }
-            else if (numString[7] == 1)
-            {
-                denary = denary + 1;
-            }
-
+            denary = Convert.ToInt32(number, 2);
+            Console.WriteLine("Binary:" + number);
             Console.WriteLine("Denary:" + denary);
 
             return result;
