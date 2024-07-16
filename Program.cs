@@ -105,6 +105,7 @@ namespace Y9_DEC_TO_BIN_SKELETON
             }
 
             denary = Convert.ToInt32(number, 2);   //converts 'number' to its integer form in base 2
+
             Console.WriteLine("Binary:" + number);
             Console.Write("Denary:" + denary);
 
@@ -118,14 +119,14 @@ namespace Y9_DEC_TO_BIN_SKELETON
             int count = 0;
             string[] hex = new string[2];
 
-            while (number < 0 )
+            while (number < 0 || number > 255)
             {
                 Console.WriteLine("Enter number between 1-255");
                 number = Convert.ToInt32(Console.ReadLine());
             }
             Console.WriteLine("Denary:" + number);
 
-            while (number > 0 || number > 255)
+            while (number > 0)
             {
                 remainder = number % numberbase;
                 number = number / numberbase;
