@@ -27,8 +27,8 @@ namespace Y9_DEC_TO_BIN_SKELETON
             //string myString2 = Console.ReadLine();
             //Console.WriteLine(myString1 + myString2);
 
-            //MAIN:  NUMBER CONVERSION PROGRAM
-
+            //MAIN: NUMBER CONVERSION PROGRAM
+            //Bin-Dec and Dec-Hex are extensions
             Console.WriteLine("Press 1 for Denary to Binary, 2 for Binary to Denary, 3 for Denary to Hexadecimal");
             int option = Convert.ToInt32(Console.ReadLine());
 
