@@ -29,10 +29,10 @@ namespace Y9_DEC_TO_BIN_SKELETON
 
             //MAIN: NUMBER CONVERSION PROGRAM
             //Bin-Dec and Dec-Hex are extensions
-            Console.WriteLine("Press 1 for Denary to Binary, 2 for Binary to Denary, 3 for Denary to Hexadecimal");
+            Console.WriteLine("Press 1 for Denary to Binary, 2 for Binary to Denary, 3 for Denary to Hexadecimal, 4 for Hexadecimal to Denary");
             int option = Convert.ToInt32(Console.ReadLine());
 
-            while (option > 3)
+            while (option > 4)
             {
                 Console.WriteLine("Press 1 for Denary to Binary, 2 for Binary to Denary, 3 for Denary to Hexadecimal");
                 option = Convert.ToInt32(Console.ReadLine());
@@ -50,13 +50,18 @@ namespace Y9_DEC_TO_BIN_SKELETON
                 string binary = Console.ReadLine();
                 Console.WriteLine(binToNumberConversion(binary));
             }
-            else
+            else if (option == 3) 
             {
                 Console.WriteLine("Enter number between 1-255");
                 int denary = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine(numberToHexConversion(denary, 16));
             }
-
+            else
+            {
+                Console.WriteLine("Enter hex value between 11 and FF");
+                string hex = Console.ReadLine();
+                Console.WriteLine(hexToNumberConversion(hex, 16));
+            }
         }
 
         //static void means the function will not return a value so it does not need a data type
@@ -171,6 +176,23 @@ namespace Y9_DEC_TO_BIN_SKELETON
             return result;
 
         }
+        static string hexToNumberConversion(string number, int numberbase)
+        {
+            string result = " ";
+            int denary = 0;
 
+            while (Convert.ToInt32(number, 16) > 255)
+            {
+                Console.WriteLine("Enter hex value between 11 and FF");
+                number = Console.ReadLine();
+            }
+
+            denary = Convert.ToInt32(number, 16);   //converts 'number' to its integer form in base 2
+
+            Console.WriteLine("Hex:" + number);
+            Console.Write("Denary:" + denary);
+
+            return result;
+        }
     }
 }
