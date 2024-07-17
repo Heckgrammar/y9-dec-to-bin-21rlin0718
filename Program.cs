@@ -58,9 +58,9 @@ namespace Y9_DEC_TO_BIN_SKELETON
             }
             else
             {
-                Console.WriteLine("Enter hex value between 11 and FF");
+                Console.WriteLine("Enter hex value between 1 and FF");
                 string hex = Console.ReadLine();
-                Console.WriteLine(hexToNumberConversion(hex, 16));
+                Console.WriteLine(hexToNumberConversion(hex));
             }
         }
 
@@ -158,7 +158,7 @@ namespace Y9_DEC_TO_BIN_SKELETON
                     {
                         hex[count] = "E";
                     }
-                    else if (remainder == 15)
+                    else
                     {
                         hex[count] = "F";
                     }
@@ -176,18 +176,18 @@ namespace Y9_DEC_TO_BIN_SKELETON
             return result;
 
         }
-        static string hexToNumberConversion(string number, int numberbase)
+        static string hexToNumberConversion(string number)
         {
             string result = " ";
             int denary = 0;
 
             while (Convert.ToInt32(number, 16) > 255 || Convert.ToInt32(number, 16) < 1)
             {
-                Console.WriteLine("Enter hex value between 11 and FF");
+                Console.WriteLine("Enter hex value between 1 and FF");
                 number = Console.ReadLine();
             }
 
-            denary = Convert.ToInt32(number, 16);   //converts 'number' to its integer form in base 2
+            denary = Convert.ToInt32(number, 16);   //converts 'number' to its integer form in base 16
 
             Console.WriteLine("Hex:" + number);
             Console.Write("Denary:" + denary);
