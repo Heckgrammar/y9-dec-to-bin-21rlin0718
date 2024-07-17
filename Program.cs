@@ -29,12 +29,12 @@ namespace Y9_DEC_TO_BIN_SKELETON
 
             //MAIN: NUMBER CONVERSION PROGRAM
             //Bin-Dec and Dec-Hex are extensions
-            Console.WriteLine("Press 1 for Denary to Binary, 2 for Binary to Denary, 3 for Denary to Hexadecimal, 4 for Hexadecimal to Denary");
+            Console.WriteLine("Press: 1 = Denary to Binary, 2 = Binary to Denary, 3 = Denary to Hexadecimal, 4 = Hexadecimal to Denary");
             int option = Convert.ToInt32(Console.ReadLine());
 
-            while (option > 4)
+            while (option > 4 || option < 1)
             {
-                Console.WriteLine("Press 1 for Denary to Binary, 2 for Binary to Denary, 3 for Denary to Hexadecimal");
+                Console.WriteLine("Press: 1 = Denary to Binary, 2 = Binary to Denary, 3 = Denary to Hexadecimal, 4 = Hexadecimal to Denary");
                 option = Convert.ToInt32(Console.ReadLine());
             } 
 
@@ -103,7 +103,7 @@ namespace Y9_DEC_TO_BIN_SKELETON
             string result = " ";
             int denary = 0;
 
-            while (Convert.ToInt32(number) > 11111111)         
+            while (Convert.ToInt32(number) > 11111111 || Convert.ToInt32(number) < 1)         
             {
                 Console.WriteLine("Enter 8-bit binary number");
                 number = Console.ReadLine();
@@ -181,7 +181,7 @@ namespace Y9_DEC_TO_BIN_SKELETON
             string result = " ";
             int denary = 0;
 
-            while (Convert.ToInt32(number, 16) > 255)
+            while (Convert.ToInt32(number, 16) > 255 || Convert.ToInt32(number, 16) < 1)
             {
                 Console.WriteLine("Enter hex value between 11 and FF");
                 number = Console.ReadLine();
